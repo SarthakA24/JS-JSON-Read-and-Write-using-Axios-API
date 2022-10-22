@@ -1,1 +1,41 @@
 /* Write style sheet here */
+p {
+    margin: 15px;
+}
+
+table {
+    margin: 0 auto;
+    border-spacing: 0;
+}
+
+tbody, td {
+    background-color: greenyellow;
+    padding: 5px;
+}
+
+#category {
+    background-color: blue;
+    color: aliceblue;
+    padding: 5px;
+}
+
+.menuDisplay {
+    margin: 15px;
+    text-align: center !important;
+}
+
+.menuTable {
+    text-align: center;
+}
+
+@media all and (max-width:467px) {
+    p {
+        margin-top: 70px;
+    }    
+}
+
+@media all and (max-width:281px) {
+    p {
+        margin-top: 90px;
+    }    
+}
