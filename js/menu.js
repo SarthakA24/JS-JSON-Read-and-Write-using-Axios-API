@@ -14,6 +14,7 @@ window.onload = () => getPromise().then((response) => {
 //Write code to filter the menu item from list
 const category = document.getElementById('category');
 category.addEventListener('change', function (e) {
+    console.log(category.value);
     findItems(category.value);
 });
 
