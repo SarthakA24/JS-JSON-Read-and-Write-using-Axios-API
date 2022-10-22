@@ -9,6 +9,7 @@ getPromise = () => {
 //Write code to load menu data using window onload event: getPromise is the promise result obained from Axios call
 window.onload = () => getPromise().then((response) => {
     menuData = response;
+    displayMenu(menuData);
 });
 
 //Write code to filter the menu item from list
