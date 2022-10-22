@@ -2,7 +2,7 @@
 var menuData = [];
 
 getPromise = () => {
-    const promise = axios.get("http://localhost:3000/menu").then( response => response.data);
+    const promise = axios.get("http://localhost:3000/menu").then(response => response.data);
     return promise;
 }
 
@@ -22,17 +22,17 @@ function findItems(categoryName) {
     if (categoryName === "All Menu Items") {
         displayMenu(menuData);
     } else {
-    var menuItemsToDisplay = [];
-    menuData.filter(item => {
-        if (item.category === categoryName) {
-            menuItemsToDisplay.push(item);
-        }
-    });
-    displayMenu(menuItemsToDisplay);
-}
+        var menuItemsToDisplay = [];
+        menuData.filter(item => {
+            if (item.category === categoryName) {
+                menuItemsToDisplay.push(item);
+            }
+        });
+        displayMenu(menuItemsToDisplay);
+    }
 }
 
-function displayMenu(menuItems){
+function displayMenu(menuItems) {
     // Remove existing nodes
     var allItem = document.querySelectorAll(".item");
     allItem.forEach(itemNode => itemNode.remove())
@@ -41,8 +41,8 @@ function displayMenu(menuItems){
     menuItems.forEach(item => {
         var tableRow = document.createElement("tr");
         tableRow.setAttribute("class", "item");
-        node.appendChild(tableRow).innerHTML = 
-        `
+        node.appendChild(tableRow).innerHTML =
+            `
             <td>${item.itemName}</td>
             <td>${item.price}</td>
         `;
