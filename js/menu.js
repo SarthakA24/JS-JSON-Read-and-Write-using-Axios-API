@@ -32,13 +32,18 @@ function findItems(categoryName) {
 }
 
 function displayMenu(menuItems){
-    var node = document.querySelector(".menuTable");
+    // Remove existing nodes
+    var allItem = document.querySelectorAll(".item");
+    allItem.forEach(itemNode => itemNode.remove())
+    // Add new menu items
+    var node = document.querySelector("#tableItems");
     menuItems.forEach(item => {
         var tableRow = document.createElement("tr");
+        tableRow.setAttribute("class", "item");
         node.appendChild(tableRow).innerHTML = 
         `
-            <th>${item.itemName}</th>
-            <th>${item.price}</th>
+            <td>${item.itemName}</td>
+            <td>${item.price}</td>
         `;
     })
 }
