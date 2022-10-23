@@ -33,6 +33,16 @@ function validateData() {
     };
 }
 
+function displatyErrorMessage(errorMessages) {
+    document.getElementById("idError").innerHTML = errorMessages.idError;
+    document.getElementById("nameError").innerHTML = errorMessages.nameError;
+    document.getElementById("custPaswordError").innerHTML = errorMessages.passwordError;
+    document.getElementById("custConfirmPasswordError").innerHTML = errorMessages.passwordConfirmError;
+    document.getElementById("emailError").innerHTML = errorMessages.emailError;
+    document.getElementById("contactError").innerHTML = errorMessages.contactError;
+    document.getElementById("addressError").innerHTML = errorMessages.addressError;
+}
+
 function validateId(customerId) {
     if (customerId === "" || customerId === null || customerId === undefined) {
         return "Please input this field!";
