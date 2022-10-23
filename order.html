@@ -14,7 +14,40 @@
         <a href="customer.html">Customer Registration</a>
         <a href="order.html">Place an Order</a>
     </div>
-
     <!-- Paste the code developed in sprint 5 challenge to create order form here  -->
+    <div class="container">
+        <h2>Fill up the Order Details here</h2>
+        <br>
+        <form action="#" class="orderForm">
+            <label for="orderId">Order Id:</label>
+            <br>
+            <input type="text" id="orderId" name="orderId" required>
+            <br>
+            <label for="customerName">Customer Name:</label>
+            <br>
+            <input type="text" id="customerName" name="customerName" required>
+            <br>
+            <label for="email">Email Id:</label>
+            <br>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="phoneNumber">Customer Number:</label>
+            <br>
+            <input type="number" id="phoneNumber" name="phoneNumber">
+            <br>
+            <label for="date">Order Date:</label>
+            <br>
+            <input type="date" id="date" name="date">
+            <br>
+            <label for="address">Address:</label>
+            <br>
+            <input type="text" id="address" name="address">
+            <br>
+            <p>Add Order:<i class="fa fa-plus" onclick="addFields()"></i></p>
+            <div class="addFields"></div>
+            <div>Total Amount = <span class="totalPrice">0</span></div>
+            <input type="submit" onclick="submitForm()">
+        </form>
+    </div>
 </body>
 </html>
