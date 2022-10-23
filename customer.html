@@ -14,7 +14,7 @@
         <a href="customer.html">Customer Registration</a>
         <a href="order.html">Place an Order</a>
     </div>
-    <form onsubmit="return validateData()" id="customerRegistrationForm">
+    <form action="#" id="customerRegistrationForm">
         <h4>Fill up Customer Details here</h4>
         <div>
             <label for="custID">Customer Id:</label>
@@ -52,7 +52,7 @@
             <small id="addressError"></small>
         </div>
         <div>
-            <input type="submit" value="Register" />
+            <input type="submit" value="Register" onclick="validateData()" />
         </div>
     </form>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
