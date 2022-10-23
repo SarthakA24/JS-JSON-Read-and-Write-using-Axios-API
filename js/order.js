@@ -79,14 +79,9 @@ function submitForm() {
             "orderedItems" : customerOrder,
             "finalAmount" : totalAmount
         };
-        var isSuccess = saveOrderDetails(finalCustomerOrder);
-        if (isSuccess) {
-            displayCustomerOrder(finalCustomerOrder);
-        } else {
-            alert("Error in saving data!");
-        }
+        saveOrderDetails(finalCustomerOrder);
+        displayCustomerOrder(finalCustomerOrder);
     }
-    return result;
 }
 
 function validateData() {
@@ -104,15 +99,12 @@ function validateData() {
 
 //Save the order details captured from the form in json-server using Axios API
 function saveOrderDetails(customerOrder) {
-    var isSuccess = false;
     axios.post("http://localhost:3002/order",customerOrder).then(response => {
-        console.log("Data Added Successfully");
-        isSuccess = true;
-        alert("Data Submitted Successfully!");
+        alert("Data saved successfully!!");
     }).catch(error => {
+        alert("Error")
         console.log(error);
     });
-    return isSuccess;
 }
 
 function displayCustomerOrder(finalCustomerOrder) {
@@ -130,7 +122,7 @@ function displayCustomerOrder(finalCustomerOrder) {
         Customer Address = ${finalCustomerOrder.address}<br>
         Final Payable Amount = ${finalCustomerOrder.finalAmount}<br>
     `;
-    finalCustomerOrder.customerOrder.forEach(order => {
+    finalCustomerOrder.orderedItems.forEach(order => {
         var orderDiv = document.createElement("div");
         displayDiv.appendChild(orderDiv).innerHTML = 
         `
