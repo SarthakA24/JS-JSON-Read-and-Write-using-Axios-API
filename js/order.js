@@ -43,19 +43,78 @@ function addTotalAmount() {
 
 // Save the order details on clicking the submit button
 function submitForm() {
+    var result = validateData();
+    if (result) {
+        var orderId = document.querySelector("#orderId").value;
+        var name = document.querySelector("#customerName").value;
+        var email = document.querySelector("#email").value;
+        var phoneNumber = document.querySelector("#phoneNumber").value;
+        var date = document.querySelector("#date").value;
+        var address = document.querySelector("#address").value;
+        var totalAmount = document.querySelector(".totalPrice").innerHTML;
+        var allOrderItems = document.querySelectorAll(".add");
+        var customerOrder = [];
+        allOrderItems.forEach(orderItem => {
+            var category = orderItem.querySelector("#category").value;
+            var itemName = orderItem.querySelector("#item").value;
+            var price = orderItem.querySelector("#price").value;
+            var quantity = orderItem.querySelector("#quantity").value;
+            var amount = orderItem.querySelector(".amount").innerHTML;
+            var order = {
+                "category" : category,
+                "itemName" : itemName,
+                "price" : price,
+                "quantity" : quantity,
+                "amount" : amount
+            };
+            customerOrder.push(order);
+        });
+        var finalCustomerOrder = {
+            "orderId" : orderId,
+            "name" : name,
+            "email" : email,
+            "phoneNumber" : phoneNumber,
+            "date" : date,
+            "address" : address,
+            "orderedItems" : customerOrder,
+            "finalAmount" : totalAmount
+        };
+        var isSuccess = saveOrderDetails(finalCustomerOrder);
+        if (isSuccess) {
+            displayCustomerOrder(finalCustomerOrder);
+        } else {
+            alert("Error in saving data!");
+        }
+    }
+    return result;
+}
+
+function validateData() {
     var orderId = document.querySelector("#orderId").value;
     var name = document.querySelector("#customerName").value;
     var email = document.querySelector("#email").value;
     var phoneNumber = document.querySelector("#phoneNumber").value;
-    var date = document.querySelector("#date").value;
     var address = document.querySelector("#address").value;
-    var totalAmount = document.querySelector(".totalPrice").innerHTML;
-    if (orderId == "" || name == "" || phoneNumber == "" || date == "" || address == "") {
-        alert("Please fill the all the fields!!");
+    if (orderId == "" || orderId == undefined || orderId == null || name == "" || name == undefined || name == null || email == "" || email == undefined || email == null || phoneNumber == "" || phoneNumber == undefined || phoneNumber == null || address == null || address == undefined || address == ""){
+        return false;
     } else {
-        alert(`Order Id = ${orderId}\nCustomer Name = ${name}\nEmail Address = ${email}\nPhone Number = ${phoneNumber}\nOrder Date = ${date}\nCustomer Address = ${address}\nOrder Total Amount = ${totalAmount}`);
+        return true;
     }
 }
 
 //Save the order details captured from the form in json-server using Axios API
+function saveOrderDetails(customerOrder) {
+    var isSuccess = false;
+    axios.post("http://localhost:3002/order",customerOrder).then(response => {
+        console.log("Data Added Successfully");
+        isSuccess = true;
+        alert("Data Submitted Successfully!");
+    }).catch(error => {
+        console.log(error);
+    });
+    return isSuccess;
+}
 
+function displayCustomerOrder(customerOrder) {
+    
+}
