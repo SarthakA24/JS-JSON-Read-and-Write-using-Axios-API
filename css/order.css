@@ -1,1 +1,43 @@
 /* Write style sheet here */
+.container {
+    border: 3px solid black;
+    margin: 0 100px 0 100px;
+    box-shadow: 5px 5px 15px rgb(255, 204, 0);
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.orderForm {
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+    padding-left: 20px;
+}
+
+.conatiner-fluid {
+    display: flex;
+    align-items: center;
+    background-color: blue;
+    color: aqua;
+    height: 50px;
+    padding-left: 50px;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.fa fa-plus {
+    border: 2px solid black !important;
+    margin-left: 15px;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+input[type=submit] {
+    border-radius: 5px;
+    background-color: blue;
+    border: 2px solid blue;
+    color: aqua;
+}
