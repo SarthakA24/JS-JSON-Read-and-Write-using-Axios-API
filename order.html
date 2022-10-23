@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Order App</title>
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="topnav">
@@ -18,7 +21,7 @@
     <div class="container">
         <h2>Fill up the Order Details here</h2>
         <br>
-        <form action="#" class="orderForm" onsubmit="return submitForm();">
+        <form action="#" class="orderForm" onsubmit="return submitForm()">
             <label for="orderId">Order Id:</label>
             <br>
             <input type="text" id="orderId" name="orderId" required>
@@ -50,5 +53,6 @@
         </form>
         <div id="finalOrder"></div>
     </div>
+    <script src="./js/order.js"></script>
 </body>
 </html>
