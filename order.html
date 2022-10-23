@@ -18,7 +18,7 @@
     <div class="container">
         <h2>Fill up the Order Details here</h2>
         <br>
-        <form action="#" class="orderForm">
+        <form action="#" class="orderForm" onsubmit="return submitForm();">
             <label for="orderId">Order Id:</label>
             <br>
             <input type="text" id="orderId" name="orderId" required>
@@ -33,20 +33,20 @@
             <br>
             <label for="phoneNumber">Customer Number:</label>
             <br>
-            <input type="number" id="phoneNumber" name="phoneNumber">
+            <input type="number" id="phoneNumber" name="phoneNumber" required>
             <br>
             <label for="date">Order Date:</label>
             <br>
-            <input type="date" id="date" name="date">
+            <input type="date" id="date" name="date" required>
             <br>
             <label for="address">Address:</label>
             <br>
-            <input type="text" id="address" name="address">
+            <input type="text" id="address" name="address" required>
             <br>
             <p>Add Order:<i class="fa fa-plus" onclick="addFields()"></i></p>
             <div class="addFields"></div>
             <div>Total Amount = <span class="totalPrice">0</span></div>
-            <input type="submit" onclick="submitForm()">
+            <input type="submit">
         </form>
     </div>
 </body>
