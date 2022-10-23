@@ -22,7 +22,7 @@ function validateData() {
     var email = document.getElementById("email").value;
     var contactNumber = document.getElementById("contact").value;
     var address = document.getElementById("address").value;
-    var errors = {
+    var error = {
         "idError" : validateId(customerId),
         "nameError" : validateName(name),
         "passwordError" : validatePassword(custPasword),
@@ -31,9 +31,16 @@ function validateData() {
         "contactError" : validateContactNumber(contactNumber),
         "addressError" : validateAddress(address)
     };
+    var errors = Object.values(error).filter(err => err != "");
+    if (errors.length == 0) {
+        return true;
+    } else {
+        displayErrorMessage(error);
+        return false;
+    }
 }
 
-function displatyErrorMessage(errorMessages) {
+function displayErrorMessage(errorMessages) {
     document.getElementById("idError").innerHTML = errorMessages.idError;
     document.getElementById("nameError").innerHTML = errorMessages.nameError;
     document.getElementById("custPaswordError").innerHTML = errorMessages.passwordError;
