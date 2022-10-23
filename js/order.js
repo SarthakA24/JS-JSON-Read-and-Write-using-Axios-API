@@ -80,7 +80,6 @@ function submitForm() {
             "finalAmount" : totalAmount
         };
         saveOrderDetails(finalCustomerOrder);
-        displayCustomerOrder(finalCustomerOrder);
     }
 }
 
@@ -107,7 +106,10 @@ function saveOrderDetails(customerOrder) {
     });
 }
 
-function displayCustomerOrder(finalCustomerOrder) {
+function displayCustomerOrder() {
+    axios.get("http://localhost:3002/order").then(response => {
+        var allOrders = response.data;
+        var finalCustomerOrder = allOrders[allOrders.length - 1];
     var displayDiv = document.getElementById("finalOrder");
     var heading = document.createElement("h2");
     displayDiv.appendChild(heading).innerHTML = `Order Placed by Customer ${finalCustomerOrder.name}`;
@@ -133,4 +135,7 @@ function displayCustomerOrder(finalCustomerOrder) {
             Amount = ${order.amount}<br>
         `;
     });
+}).catch(err => {
+    console.log(err);
+});
 }
