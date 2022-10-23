@@ -39,3 +39,8 @@ input[type='submit'] {
     color: cyan;
     padding: 5px;
 }
+
+small {
+    font-size: 12px;
+    color: red;
+}
