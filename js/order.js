@@ -61,23 +61,23 @@ function submitForm() {
             var quantity = orderItem.querySelector("#quantity").value;
             var amount = orderItem.querySelector(".amount").innerHTML;
             var order = {
-                "category" : category,
-                "itemName" : itemName,
-                "price" : price,
-                "quantity" : quantity,
-                "amount" : amount
+                "category": category,
+                "itemName": itemName,
+                "price": price,
+                "quantity": quantity,
+                "amount": amount
             };
             customerOrder.push(order);
         });
         var finalCustomerOrder = {
-            "orderId" : orderId,
-            "name" : name,
-            "email" : email,
-            "phoneNumber" : phoneNumber,
-            "date" : date,
-            "address" : address,
-            "orderedItems" : customerOrder,
-            "finalAmount" : totalAmount
+            "orderId": orderId,
+            "name": name,
+            "email": email,
+            "phoneNumber": phoneNumber,
+            "date": date,
+            "address": address,
+            "orderedItems": customerOrder,
+            "finalAmount": totalAmount
         };
         saveOrderDetails(finalCustomerOrder);
     }
@@ -89,7 +89,7 @@ function validateData() {
     var email = document.querySelector("#email").value;
     var phoneNumber = document.querySelector("#phoneNumber").value;
     var address = document.querySelector("#address").value;
-    if (orderId == "" || orderId == undefined || orderId == null || name == "" || name == undefined || name == null || email == "" || email == undefined || email == null || phoneNumber == "" || phoneNumber == undefined || phoneNumber == null || address == null || address == undefined || address == ""){
+    if (orderId == "" || orderId == undefined || orderId == null || name == "" || name == undefined || name == null || email == "" || email == undefined || email == null || phoneNumber == "" || phoneNumber == undefined || phoneNumber == null || address == null || address == undefined || address == "") {
         return false;
     } else {
         return true;
@@ -98,7 +98,7 @@ function validateData() {
 
 //Save the order details captured from the form in json-server using Axios API
 function saveOrderDetails(customerOrder) {
-    axios.post("http://localhost:3002/order",customerOrder).then(response => {
+    axios.post("http://localhost:3002/order", customerOrder).then(response => {
         alert("Data saved successfully!!");
     }).catch(error => {
         alert("Error")
@@ -110,12 +110,12 @@ function displayCustomerOrder() {
     axios.get("http://localhost:3002/order").then(response => {
         var allOrders = response.data;
         var finalCustomerOrder = allOrders[allOrders.length - 1];
-    var displayDiv = document.getElementById("finalOrder");
-    var heading = document.createElement("h2");
-    displayDiv.appendChild(heading).innerHTML = `Order Placed by Customer ${finalCustomerOrder.name}`;
-    var orderBodyDiv = document.createElement("div");
-    displayDiv.appendChild(orderBodyDiv).innerHTML = 
-    `
+        var displayDiv = document.getElementById("finalOrder");
+        var heading = document.createElement("h2");
+        displayDiv.appendChild(heading).innerHTML = `Order Placed by Customer ${finalCustomerOrder.name}`;
+        var orderBodyDiv = document.createElement("div");
+        displayDiv.appendChild(orderBodyDiv).innerHTML =
+            `
         Order ID = ${finalCustomerOrder.orderId}<br>
         Customer Name = ${finalCustomerOrder.name}<br>
         Customer Email = ${finalCustomerOrder.email}<br>
@@ -124,18 +124,18 @@ function displayCustomerOrder() {
         Customer Address = ${finalCustomerOrder.address}<br>
         Final Payable Amount = ${finalCustomerOrder.finalAmount}<br>
     `;
-    finalCustomerOrder.orderedItems.forEach(order => {
-        var orderDiv = document.createElement("div");
-        displayDiv.appendChild(orderDiv).innerHTML = 
-        `
+        finalCustomerOrder.orderedItems.forEach(order => {
+            var orderDiv = document.createElement("div");
+            displayDiv.appendChild(orderDiv).innerHTML =
+                `
             Category = ${order.category}<br>
             Item Name = ${order.itemName}<br>
             Quantity = ${order.quantity}<br>
             Price = ${order.price}<br>
             Amount = ${order.amount}<br>
         `;
+        });
+    }).catch(err => {
+        console.log(err);
     });
-}).catch(err => {
-    console.log(err);
-});
 }
