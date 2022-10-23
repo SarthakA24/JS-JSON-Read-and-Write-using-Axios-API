@@ -10,7 +10,11 @@ function setPasswordConfirmValidity(custPasword, custConfirmPassword) {
 
 // Write code to submit customer details 
 function submitCustomerDetail(customer) {
-   
+   axios.post("http://localhost:3000/customer", customer).then(response => {
+    alert("Data Submitted Successfully!");
+   }).catch(e => {
+    console.error("JSON Server Error!");
+   });
 }
 
 // Functions to validate form data
