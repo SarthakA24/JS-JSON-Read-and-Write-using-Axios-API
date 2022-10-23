@@ -10,7 +10,7 @@ function setPasswordConfirmValidity(custPasword, custConfirmPassword) {
 
 // Write code to submit customer details 
 function submitCustomerDetail(customer) {
-   axios.post("http://localhost:3000/customer", customer).then(response => {
+   axios.post("http://localhost:3000/customers", customer).then(response => {
     alert("Data Submitted Successfully!");
    }).catch(e => {
     console.error("JSON Server Error!");
@@ -101,7 +101,7 @@ function validateEmail(email) {
 }
 
 function validateContactNumber(number) {
-    var regex = "(?<!\d)\d{10}(?!\d)";
+    var regex = "^[0-9]{10}$";
     if (number === "" || number === undefined || number === null) {
         return "Number cannot be empty."
     } else if (!number.match(regex)) {
