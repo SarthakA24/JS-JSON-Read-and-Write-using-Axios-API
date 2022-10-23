@@ -115,6 +115,30 @@ function saveOrderDetails(customerOrder) {
     return isSuccess;
 }
 
-function displayCustomerOrder(customerOrder) {
-    
+function displayCustomerOrder(finalCustomerOrder) {
+    var displayDiv = document.getElementById("finalOrder");
+    var heading = document.createElement("h2");
+    displayDiv.appendChild(heading).innerHTML = `Order Placed by Customer ${finalCustomerOrder.name}`;
+    var orderBodyDiv = document.createElement("div");
+    displayDiv.appendChild(orderBodyDiv).innerHTML = 
+    `
+        Order ID = ${finalCustomerOrder.orderId}<br>
+        Customer Name = ${finalCustomerOrder.name}<br>
+        Customer Email = ${finalCustomerOrder.email}<br>
+        Customer Phone Number = ${finalCustomerOrder.phoneNumber}<br>
+        Order Date = ${finalCustomerOrder.date}<br>
+        Customer Address = ${finalCustomerOrder.address}<br>
+        Final Payable Amount = ${finalCustomerOrder.finalAmount}<br>
+    `;
+    finalCustomerOrder.customerOrder.forEach(order => {
+        var orderDiv = document.createElement("div");
+        displayDiv.appendChild(orderDiv).innerHTML = 
+        `
+            Category = ${order.category}<br>
+            Item Name = ${order.itemName}<br>
+            Quantity = ${order.quantity}<br>
+            Price = ${order.price}<br>
+            Amount = ${order.amount}<br>
+        `;
+    });
 }
