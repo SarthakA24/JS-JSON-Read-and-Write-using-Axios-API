@@ -9,7 +9,7 @@ function setPasswordConfirmValidity(custPasword, custConfirmPassword) {
 
 
 // Write code to submit customer details 
-function submitCustomerDetail(event) {
+function submitCustomerDetail(customer) {
    
 }
 
@@ -33,6 +33,15 @@ function validateData() {
     };
     var errors = Object.values(error).filter(err => err != "");
     if (errors.length == 0) {
+        var customer = {
+            "id" : customerId,
+            "name" : name,
+            "password" : custPasword,
+            "email" : email,
+            "contactNumber" : contactNumber,
+            "address" : address 
+        }
+        submitCustomerDetail(customer);
         return true;
     } else {
         displayErrorMessage(error);
