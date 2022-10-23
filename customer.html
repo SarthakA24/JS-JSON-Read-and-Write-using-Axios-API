@@ -14,7 +14,7 @@
         <a href="customer.html">Customer Registration</a>
         <a href="order.html">Place an Order</a>
     </div>
-    <form onsubmit="return submitCustomerDetail(event)" id="customerRegistrationForm">
+    <form onsubmit="return validateData()" id="customerRegistrationForm">
         <h4>Fill up Customer Details here</h4>
         <div>
             <label for="custID">Customer Id:</label>
@@ -43,7 +43,7 @@
         </div>
         <div>
             <label for="contact">Contact Number:</label>
-            <input type="text" name="contact" id="contact">
+            <input type="number" name="contact" id="contact">
             <small id="contactError"></small>
         </div>
         <div>
@@ -52,7 +52,7 @@
             <small id="addressError"></small>
         </div>
         <div>
-            <input type="submit" value="Register" onclick="return validateData()" />
+            <input type="submit" value="Register" />
         </div>
     </form>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
