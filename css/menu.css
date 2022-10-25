@@ -8,7 +8,8 @@ table {
     margin: auto;
 }
 
-tbody, td {
+tbody,
+td {
     background-color: greenyellow;
     padding: 15px;
 }
@@ -32,11 +33,11 @@ tbody, td {
 @media all and (max-width:467px) {
     p {
         margin-top: 70px;
-    }    
+    }
 }
 
 @media all and (max-width:281px) {
     p {
         margin-top: 90px;
-    }    
+    }
 }
