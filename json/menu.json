@@ -69,114 +69,131 @@
       "category": "Desserts",
       "itemName": "Brownie",
       "price": 2.52,
-      "cuisine": "Mexican"
+      "cuisine": "Mexican",
+      "url": "../images/rich-chocolate-brownie-with-vanilla-bean-ice-cream-76209-1 (1).jpeg"
     },
     {
       "id": 110,
       "category": "Starters",
       "itemName": "Emilgrana & Mushroom Dip",
       "price": 4.35,
-      "cuisine": "Asian"
+      "cuisine": "Asian",
+      "url": "../images/Emilgrana & Mushroom Dip.jpeg"
     },
     {
       "id": 201,
       "category": "Beverages",
       "itemName": "Berry Blast",
-      "price": 1.72
+      "price": 1.72,
+      "url": "../images/Berry Blast.jpg"
     },
     {
       "id": 202,
       "category": "Beverages",
       "itemName": "Oreo Monster Shake",
-      "price": 3.78
+      "price": 3.78,
+      "url": "../images/Oreo Monster Shake.jpg"
     },
     {
       "id": 203,
       "category": "Beverages",
       "itemName": "Classic Mojito",
-      "price": 3.44
+      "price": 3.44,
+      "url": "../images/best-mojito-recipe-2.jpg"
     },
     {
       "id": 204,
       "category": "Beverages",
       "itemName": "Water Melon Ice Tea",
-      "price": 2.5
+      "price": 2.5,
+      "url": "../images/Watermelon-Iced-Tea-3-new.jpg"
     },
     {
       "id": 205,
       "category": "Beverages",
       "itemName": "Diet Pepsi",
-      "price": 1
+      "price": 1,
+      "url": "../images/7L4CXIB4-diet-pepsi-cola-12-ct-12-oz-cans.jpg"
     },
     {
       "id": 301,
       "category": "Main Course",
       "itemName": "Fruit Pizza",
       "price": 5,
-      "cuisine": "French"
+      "cuisine": "French",
+      "url": "../images/sugar-cookie-fruit-pizza.jpg"
     },
     {
       "id": 302,
       "category": "Main Course",
-      "itemName": " Combo of 2 Veg Pizzas",
+      "itemName": "Combo of 2 Veg Pizzas",
       "price": 5.04,
-      "cuisine": "French"
+      "cuisine": "French",
+      "url": "../images/Combo of 2 Veg Pizzas.jpg"
     },
     {
       "id": 303,
       "category": "Main Course",
       "itemName": "Risotto Con Funghi Veg",
       "price": 6.58,
-      "cuisine": "Italian"
+      "cuisine": "Italian",
+      "url": "../images/Risotto-with-Mushrooms-480x360.jpg"
     },
     {
       "id": 304,
       "category": "Main Course",
       "itemName": "Penne con Peppadew",
       "price": 9,
-      "cuisine": "Italian"
+      "cuisine": "Italian",
+      "url": "../images/penne-con-peppadew-379473122-1u7ch.jpg"
     },
     {
       "id": 305,
       "category": "Main Course",
       "itemName": "Dan Dan Noodles",
       "price": 3.99,
-      "cuisine": "Chinese"
+      "cuisine": "Chinese",
+      "url": "../images/k_Photo_Recipe Ramp Up_2021-12-Dan-Dan-Noodles_IMG_7226.jpeg"
     },
     {
       "id": 306,
       "category": "Main Course",
       "itemName": "Mexican Delight Pizza",
       "price": 4.2,
-      "cuisine": "Mexican"
+      "cuisine": "Mexican",
+      "url": "../images/md_maxican_delight_pizza.jpg"
     },
     {
       "id": 307,
       "category": "Main Course",
       "itemName": "Spaghetti Aglio e Olio",
       "price": 9,
-      "cuisine": "Mexican"
+      "cuisine": "Mexican",
+      "url": "../images/Aglio-olio-1-1.jpg"
     },
     {
       "id": 308,
       "category": "Main Course",
       "itemName": "Pomodoro Pesto Pizza By the Slice",
       "price": 15,
-      "cuisine": "Asian"
+      "cuisine": "Asian",
+      "url": "../images/pizza-express-pomodoro.jpg"
     },
     {
       "id": 309,
       "category": "Main Course",
       "itemName": "Cheese Burst Pizza",
       "price": 12,
-      "cuisine": "Asian"
+      "cuisine": "Asian",
+      "url": "../images/cheese burst pizza.jpg"
     },
     {
       "id": 310,
       "category": "Main Course",
       "itemName": "Fresh Veggi Special Pizza",
       "price": 4,
-      "cuisine": "Asian"
+      "cuisine": "Asian",
+      "url": "../images/best-veggie-pizza-recipe-1.jpg"
     }
   ]
 }
