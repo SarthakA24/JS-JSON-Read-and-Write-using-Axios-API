@@ -43,6 +43,7 @@ function displayMenu(menuItems) {
         tableRow.setAttribute("class", "item");
         node.appendChild(tableRow).innerHTML =
             `
+            <td><img src="${item.url}" alt="Image not Available"></td>
             <td>${item.itemName}</td>
             <td>${item.price}</td>
         `;
