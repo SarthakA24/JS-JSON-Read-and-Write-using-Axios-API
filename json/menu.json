@@ -6,7 +6,7 @@
       "itemName": "Dough Balls Doppio",
       "price": 5.95,
       "cuisine": "Asian",
-      "url": "../images/Dough+Balls+Vegan+Single.png" 
+      "url": "../images/Dough+Balls+Vegan+Single.png"
     },
     {
       "id": 102,
@@ -30,7 +30,7 @@
       "itemName": "Veg Wrap",
       "price": 9.5,
       "cuisine": "French",
-      "url" : "../images/vegetable-wraps-recipe-500x500.jpg"
+      "url": "../images/vegetable-wraps-recipe-500x500.jpg"
     },
     {
       "id": 105,
