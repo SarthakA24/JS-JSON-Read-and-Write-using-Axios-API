@@ -5,6 +5,7 @@ p {
 
 table {
     border-spacing: 0;
+    margin: auto;
 }
 
 tbody, td {
